@@ -11,7 +11,8 @@ $app = AppFactory::create();
 // Include route definitions
 $routes = require __DIR__ . '/routes/routes.php';
 $routes($app);
-
+// $user_routes = require __DIR__ . '/routs/user_routes.php';
+//$routes($app);
 //an example of get
 //  $app->get('/', function ($request, $response, $args) use ($pdo) {
 //     // Use the database connection $pdo here

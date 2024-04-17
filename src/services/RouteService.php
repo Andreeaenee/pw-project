@@ -9,7 +9,7 @@ class RouteService
     public static function helloWorld(Request $request, Response $response, $args)
     {
         // Ensure that we're using the Slim Response object
-        $response->getBody()->write("Hello world");
+        $response->getBody()->write("Hello world_MWHAHAHAHHAHAHAH");
         return $response;
     }
 }
