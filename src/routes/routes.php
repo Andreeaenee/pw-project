@@ -1,12 +1,15 @@
 <?php
 // routes/routes.php
+use Psr\Http\Message\ResponseInterface as Response;
+use Psr\Http\Message\ServerRequestInterface as Request;
 
-use Slim\App;
 
-return function (App $app) {
-    // Include the RouteService
-    require __DIR__ . '/../services/RouteService.php';
+return function ($app) {
 
     // Setup route using the RouteService
-    $app->get('/', 'RouteService:helloWorld');
+    $app->get('/', '\App\Services\RouteService:helloWorld');
+
+    // Setup route for searching recipes by category
+    $app->get('/recipes/byCategory/{categoryId}', '\App\Services\RecipeHandler:getRecipesByCategoryId');
+    return $app;
 };
