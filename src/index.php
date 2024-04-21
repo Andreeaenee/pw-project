@@ -2,15 +2,15 @@
 require '../vendor/autoload.php'; // Make sure to autoload Composer dependencies
 require './config/db.php'; 
 
-use Slim\Factory\AppFactory;
-
 // Instantiate App
-$app = AppFactory::create();
+$settings = require __DIR__ . '/settings.php';
+$app = new \Slim\App($settings);
+$container = $app->getContainer();
 
 
 // Include route definitions
-$routes = require __DIR__ . '/routes/routes.php';
-$routes($app);
+(require_once __DIR__ . '/Routes/routes.php')($app);
+
 // $user_routes = require __DIR__ . '/routs/user_routes.php';
 //$routes($app);
 //an example of get
