@@ -1,2 +1,4 @@
-//$stmt = $pdo->query('SELECT * FROM your_table');
+function getCategories($pdo) {
+    return $pdo->query('SELECT * FROM category');
+}
 //example of what to do

@@ -8,5 +8,6 @@ return function (App $app) {
     require __DIR__ . '/../services/RouteService.php';
 
     // Setup route using the RouteService
-    $app->get('/', 'RouteService:helloWorld');
+   // $app->get('/', 'RouteService:helloWorld');
+    $app->get('/', 'RouteService:category');
 };
